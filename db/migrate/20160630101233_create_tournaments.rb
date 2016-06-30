@@ -10,3 +10,5 @@ class CreateTournaments < ActiveRecord::Migration
     end
   end
 end
+
+

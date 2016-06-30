@@ -1,7 +1,6 @@
 class Team < ActiveRecord::Base
   belongs_to :school
   belongs_to :tournament
-  belongs_to :player
   has_many :roster_spots
   has_many :players, through: :roster_spots
 

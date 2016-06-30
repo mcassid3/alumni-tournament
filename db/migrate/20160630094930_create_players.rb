@@ -5,10 +5,10 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :last_name, null: false
       t.string :email, null: false
       t.string :password_hash, null: false
-      t.string :cell, null: false
+      t.string :cell
       t.boolean :captain
       t.integer :school_id, null: false
-      t.integer :grad_year, null: false
+      t.integer :grad_year
       t.timestamps null: false
     end
   end

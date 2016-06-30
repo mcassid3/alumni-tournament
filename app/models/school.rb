@@ -4,6 +4,7 @@ class School < ActiveRecord::Base
   has_many :roster_spots, through: :teams
   has_many :players, through: :roster_spots
 
-  validates :name, presence: {message: "School must have a name."}, uniqueness: true
+  validates :name, presence: {message: "School must have a name."}
+  #, uniqueness: true
 
 end
