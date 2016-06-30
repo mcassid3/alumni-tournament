@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+/*Home Page*/
+ul.nav-top {
+  list-style-type: none;
+}
+
+ul.nav-top li {
+  display: inline-block;
+}
+
+ul.nav-top li a {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+.nav-container{
+  display: flex;
+  align-items: center;
+  hieght: 200px;
+  width: 100%;
+  background: #5E5E5F;
+}
+
+.nav-logo-container {
+  padding-top: 10px;
+  padding-left: 50px;
+  height: 100px;
+}
+
+.nav-link-container {
+
+}
+
+#logo {
+  width: 200px;
+}
