@@ -6,10 +6,14 @@ get "/" do
 end
 
 get "/vimeodata" do
-  uri = URI('https://api.vimeo.com/videos/172972658?fields=stats')
-  p uri
-  response = Net::HTTP.get(uri,'token' => '1b4fdf5260916dbe7f8d710a6230f25b')
-  p response
+  uri = URI.parse("https://api.vimeo.com/videos/172972658/?fields=stats")
+  params = {:access_token => "1c3f9c7249cfaab1a8d1254aee7690a2", :Accept => "application/vnd.vimeo.*+json;version=3.2", :scope => "public" }
+  
+  uri.query = URI.encode_www_form(params)
+
+  res = Net::HTTP.get_response(uri)
+  content_type :json
+  res.body.to_json if res.is_a?(Net::HTTPSuccess)
+
 end
 
-# https://api.vimeo.com/oauth/authorize?client_id=XXXXX&response_type=code&redirect_uri=XXXX.YYY/ZZZZZ&state=XXXXXX

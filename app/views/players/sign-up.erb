@@ -1,0 +1,49 @@
+<div class = "sign-up-container"> 
+  
+  <form action="/players" method="post">
+    
+    <label for="first_name">First Name:
+      <input type="text" name="player[first_name]">
+    </label>
+
+    <label for="last_name">Last Name:
+      <input type="text" name="player[last_name]">
+    </label>
+
+    <label for="email">Email Address:
+      <input type="email" name="player[email]">
+    </label>
+
+    <label for="password">Password:
+      <input type="password" name="player[password]">
+    </label>
+
+    <label for="cell">Password:
+      <input type="tel" name="player[cell]">
+    </label>
+
+    <label for="captain">Are you you your team's designated captain?
+      <input type="radio" name="player[captain]" value= "true">Yes<br> 
+      <input type="radio" name="player[captain]" value="false" checked>No<br>
+    </label>
+
+    <label for="cell">Enter your HS grad year:
+      <input type="number" name="player[grad_year]">
+    </label>
+
+
+    <select name="team">
+      <% @teams.each do |team| %>
+        <option value="<%= team.id%>"><%= team.name %></option>
+      <%end%>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+
+
+
+
+
+
+</div>
