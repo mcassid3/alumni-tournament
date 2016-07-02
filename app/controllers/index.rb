@@ -1,9 +1,12 @@
 require 'uri'
 require 'net/http'
 require 'json'
+
+
 get "/" do
   erb :"/index"
 end
+
 
 get "/vimeodata" do
   uri = URI.parse("https://api.vimeo.com/videos/172972658/?fields=stats")

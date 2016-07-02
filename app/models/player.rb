@@ -22,4 +22,18 @@ class Player < ActiveRecord::Base
     self.password == plain_pw
   end
 
+  # def in_system?
+
+  # end
+
+  # def on_a_current_team?
+  #   email_check = Player.find_by(email: self.email)
+  #   last_name_check = Player.find_by(last_name: self.last_name)
+  #   first_name_check = Player.find_by(first_name: self.first_name)
+  #   if email_check == last_name_check == first_name_check
+
+
+  # end
+
+
 end

@@ -1,7 +1,10 @@
 require 'csv'
-
-#Add 2016 Tournament
-Tournament.create!(name: "Illinois Alumni Hockey Tournament", year: 2016, rink: "Seven Bridges Ice Arena", city: "Woodridge", state: "IL")
+require 'date'
+#Add 2016 2017 Tournament
+dateone= Date.parse("6/3/2016")
+datetwo = Date.parse("6/3/2017")
+Tournament.create!(name: "2016 Illinois Alumni Hockey Tournament", date: dateone, rink: "Seven Bridges Ice Arena", city: "Woodridge", state: "IL")
+Tournament.create!(name: "2017 Illinois Alumni Hockey Tournament", date: datetwo, rink: "Seven Bridges Ice Arena", city: "Woodridge", state: "IL")
 
 #Enter 2016 schools
 schools = ["Lincoln-Way Central", "Homewood Flossmoor", "Fenwick","Sandburg","Lyons Township","Downers Grove South","Marist","Lincoln-Way East","Lockport","Hinsdale Central","Providence Catholic","Rockford","Brother Rice","Mount Carmel","Andrew","St. Rita","Naperville Central","St. Laurence","Downer's Grove North","Conant","St. Viator","Riverside Brookfield"]
@@ -35,6 +38,8 @@ Team.create!(name: "Conant", school_id: 20 , tournament_id: 1, division: "Old Ti
 Team.create!(name: "St. Viator", school_id: 21, tournament_id: 1, division: "Young Guns" )
 Team.create!(name: "Providence Catholic #2", school_id: 11, tournament_id: 1, division: "Young Guns" )
 Team.create!(name: "Riverside Brookfield", school_id: 22, tournament_id: 1, division: "Young Guns" )
+Team.create!(name: "Fenwick" , school_id: 3 , tournament_id: 2, division: "Old Timers")
+Team.create!(name: "Fenwick" , school_id: 3 , tournament_id: 2, division: "Young Guns")
 
 #Enter 2016 players
 CSV.foreach("./db/players.csv", headers: true, header_converters: :symbol) do |row|

@@ -1,49 +1,64 @@
 <div class = "sign-up-container"> 
-  
-  <form action="/players" method="post">
-    
-    <label for="first_name">First Name:
-      <input type="text" name="player[first_name]">
-    </label>
+  <div class="form-inputs">
+    <form action="/players" method="post">
+      
+      <div class=form-row>
+        <label for="first_name">First Name:
+          <input size="25" type="text" name="player[first_name]">
+        </label>
+      </div>
 
-    <label for="last_name">Last Name:
-      <input type="text" name="player[last_name]">
-    </label>
+      <div class=form-row>
+        <label for="last_name">Last Name:
+          <input size="25" type="text" name="player[last_name]">
+        </label>
+      </div>
 
-    <label for="email">Email Address:
-      <input type="email" name="player[email]">
-    </label>
+      <div class="form-row">
+        <label for="email">Email:
+          <input size="30" type="email" name="player[email]">
+        </label>
+      </div>
 
-    <label for="password">Password:
-      <input type="password" name="player[password]">
-    </label>
+      <div class=form-row>
+        <label for="password">Password:  
+         <input size="26" type="password" name="player[password]">
+        </label>
+      </div>
+      
+      <div class="form-row">
+        <label for="cell">Cell #:
+          <input size="25" type="tel" name="player[cell]">
+        </label>
+      </div>
 
-    <label for="cell">Password:
-      <input type="tel" name="player[cell]">
-    </label>
+      <div class=form-row>
+        <label for="captain"> Are you the captain for your team? </label> <br>
+        <input type="radio" name="player[captain]" value= "true"> Yes <br>
+        <input type="radio" name="player[captain]" value="false" checked> No<br>
+      </div>
+        
 
-    <label for="captain">Are you you your team's designated captain?
-      <input type="radio" name="player[captain]" value= "true">Yes<br> 
-      <input type="radio" name="player[captain]" value="false" checked>No<br>
-    </label>
+      <div class="form-row">
+        <label for="cell">Enter your HS grad year:   
+          <input type="number" name="player[grad_year]">
+        </label>
+      </div>
 
-    <label for="cell">Enter your HS grad year:
-      <input type="number" name="player[grad_year]">
-    </label>
-
-
-    <select name="team">
-      <% @teams.each do |team| %>
-        <option value="<%= team.id%>"><%= team.name %></option>
-      <%end%>
-    </select>
-
-    <input type="submit" value="Submit">
-  </form>
-
-
-
-
-
-
+      <div class="form-row">
+        <label for="team"> Select your team:
+          <select name="team"> 
+            <% @teams.each do |team| %>
+              <%if team.active?%>
+              <option value="<%= team.id%>"><%= "#{team.name}-#{team.division}"  %></option>
+              <%end%>
+            <%end%>
+          </select>
+        </label>
+      </div>
+      <div class="form-row">
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  </div>
 </div>
